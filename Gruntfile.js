@@ -3,15 +3,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     'json-minify': {
       build: {
-        files: 'dist/mathmaps/**/*.json'
+        files: 'dist/mathmaps/*/*.js'
       }
     },
     gitclone: {
       'speech-rule-engine': {
         options: {
           repository: 'https://github.com/zorkow/speech-rule-engine.git',
-          branch: 'v1.2.0',
-          cwd: "."
+          branch: 'v2.2.1',
+          cwd: '.'
         }
       }
     },
@@ -81,7 +81,8 @@ module.exports = function(grunt) {
         'cp -R speech-rule-engine/src/mathmaps dist/',
         'cp extensions/*.ogg dist/',
         'cp extensions/*.mp3 dist/',
-        'rm dist/mathmaps/math_map.js'
+        'rm dist/mathmaps/math_map.js',
+        'rm dist/mathmaps/.htaccess'
       ].join('&&')
     }
   });
