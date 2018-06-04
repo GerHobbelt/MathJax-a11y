@@ -79,6 +79,7 @@
         items.unshift("Accessibility");
         var menu = ITEM.SUBMENU.apply(ITEM.SUBMENU,items);
         var locale = MENU.IndexOfId('Locale');
+        console.log('here');
         if (locale) {
           MENU.items.splice(locale,0,menu);
         } else {
