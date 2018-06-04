@@ -10,17 +10,12 @@ module.exports = function(grunt) {
       'speech-rule-engine': {
         options: {
           repository: 'https://github.com/zorkow/speech-rule-engine.git',
-          branch: 'v2.2.1',
+          branch: 'Braille_table',
           cwd: '.'
         }
       }
     },
     'uglify': {
-      mathmaps: {
-        files: {
-          'dist/mathmaps/mathmaps_ie.js': 'dist/mathmaps/mathmaps_ie.js'
-        }
-      },
       build: {
         files: {
           'dist/accessibility-menu.js': 'extensions/accessibility-menu.js',
@@ -67,7 +62,7 @@ module.exports = function(grunt) {
           'npm install',
           'npm install --only=dev',
           'npm install wicked-good-xpath',
-          'make mathjax'
+          'make publish; make mathjax'
         ].join('&&'),
         options: {
           execOptions: {
@@ -81,7 +76,6 @@ module.exports = function(grunt) {
         'cp -R speech-rule-engine/src/mathmaps dist/',
         'cp extensions/*.ogg dist/',
         'cp extensions/*.mp3 dist/',
-        'rm dist/mathmaps/math_map.js',
         'rm dist/mathmaps/.htaccess'
       ].join('&&')
     }
@@ -92,7 +86,7 @@ module.exports = function(grunt) {
   // Run shell commands.
   grunt.loadNpmTasks('grunt-shell');
   // Minify JSON files.
-  grunt.loadNpmTasks('grunt-json-minify');
+  // grunt.loadNpmTasks('grunt-json-minify');
   // Minify regular files.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
@@ -101,7 +95,7 @@ module.exports = function(grunt) {
     'gitclone',
     'shell:compile',
     'shell:copy',
-    'json-minify',
+    // 'json-minify',
     'uglify',
     'shell:clean_sre'
   ]);
