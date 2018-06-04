@@ -6,8 +6,9 @@
 <script type="text/x-sre-config">
 {
 "json": "./dist/mathmaps",
-"domain": "mathspeak",
-"style": "nemeth"
+"domain": "default",
+"style": "default",
+"locale": "nemeth"
 }
 </script>
 <script type="text/x-mathjax-config">
@@ -25,9 +26,9 @@ menuSettings: {
 explorer: true
 }
 });
-MathJax.Ajax.config.path["a11y"] = "./extensions";
+MathJax.Ajax.config.path["a11y"] = "./dist";
 </script>
-<script src="https://rawgit.com/mathjax/MathJax/master/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<script src="https://mathjax.accessibilityally.com/MathJax2/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
 <br clear="all"/>
 
