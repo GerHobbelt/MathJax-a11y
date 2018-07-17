@@ -88,9 +88,12 @@ MathJax.Hub.Register.StartupHook('Sre Ready', function() {
       var ruleset = SETTINGS[Assistive.prefix + 'ruleset'];
       var cstr = ruleset.split('-');
       sre.System.getInstance().setupEngine({
-        locale: "nemeth",
-        domain: "default", // Assistive.Domain(cstr[0]),
-        style: "default" // cstr[1],
+        // locale: "nemeth",
+        // domain: "default", 
+        // style: "default"
+        locale: MathJax.Localization.locale,
+        domain: Assistive.Domain(cstr[0]),
+        style: cstr[1]
         // rules: Assistive.RuleSet(cstr[0])
       });
       Assistive.oldrules = ruleset;
